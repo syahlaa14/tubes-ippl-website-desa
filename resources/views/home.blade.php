@@ -1,73 +1,197 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Desa Sejahtera</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.app')
 
-    <!-- CDN Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-b from-purple-100 to-white">
+@section('content')
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <h1>Selamat Datang di <span>Desa Sejahtera</span></h1>
+            <p>
+                Portal resmi Desa Sejahtera untuk memberikan informasi dan layanan terbaik
+                kepada seluruh masyarakat desa.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ route('layanan') }}" class="btn btn-primary">Layanan Kami</a>
+                <a href="{{ route('profile') }}" class="btn btn-light">Profil Desa</a>
+            </div>
+        </div>
 
-<!-- Navbar -->
-<nav class="flex justify-between items-center p-5 bg-white shadow">
-    <h1 class="text-xl font-bold text-blue-600">Desa Sejahtera</h1>
-    <div class="space-x-5">
-        <a href="#" class="text-blue-600 font-semibold">Beranda</a>
-        <a href="#">Profile Desa</a>
-        <a href="#">Informasi</a>
-        <a href="#">Layanan</a>
-    </div>
-</nav>
-
-<!-- Hero -->
-<section class="grid md:grid-cols-2 gap-10 items-center p-10">
-    <div>
-        <h2 class="text-4xl font-bold">
-            Selamat Datang di <br>
-            <span class="text-blue-600">Desa Sejahtera</span>
-        </h2>
-        <p class="mt-4 text-gray-600">
-            Portal resmi Desa Sejahtera untuk memberikan informasi dan layanan terbaik kepada masyarakat.
-        </p>
-
-        <div class="mt-6 space-x-3">
-            <button class="bg-blue-600 text-white px-5 py-2 rounded-lg">Layanan Kami</button>
-            <button class="bg-gray-200 px-5 py-2 rounded-lg">Profil Desa</button>
+        <div>
+            <img src="{{ asset('img/desa.jpg') }}" alt="Desa" class="hero-image">
         </div>
     </div>
+</section>
 
-    <div>
-        <img src="{{ asset('img/desa.jpg') }}"
-             class="rounded-2xl shadow-lg">
+<section class="stats-section">
+    <div class="container stats-grid">
+        <div class="card stat-card">
+            <div class="stat-top">
+                <span class="stat-icon">👥</span>
+                <span class="growth">+2.5%</span>
+            </div>
+            <h3>5,234</h3>
+            <p>Total Penduduk</p>
+        </div>
+
+        <div class="card stat-card">
+            <div class="stat-top">
+                <span class="stat-icon">👨‍👩‍👧</span>
+                <span class="growth">+1.2%</span>
+            </div>
+            <h3>1,456</h3>
+            <p>Kepala Keluarga</p>
+        </div>
+
+        <div class="card stat-card">
+            <div class="stat-top">
+                <span class="stat-icon">📰</span>
+                <span class="growth">+8</span>
+            </div>
+            <h3>24</h3>
+            <p>Berita Bulan Ini</p>
+        </div>
+
+        <div class="card stat-card">
+            <div class="stat-top">
+                <span class="stat-icon">📈</span>
+                <span class="growth">+5%</span>
+            </div>
+            <h3>89%</h3>
+            <p>Pengaduan Selesai</p>
+        </div>
     </div>
 </section>
 
-<!-- Statistik -->
-<section class="grid md:grid-cols-4 gap-6 px-10 pb-10">
+<section class="container section-space">
+    <div class="card profile-card">
+        <div class="section-title">
+            <h2>Profil Singkat Desa</h2>
+            <p>Informasi umum tentang Desa Sejahtera</p>
+        </div>
 
-    <div class="bg-white p-5 rounded-xl shadow">
-        <h3 class="text-2xl font-bold">{{ number_format($data['penduduk']) }}</h3>
-        <p class="text-gray-500">Total Penduduk</p>
+        <div class="profile-grid">
+            <div>
+                <h3>Tentang Desa</h3>
+                <p>
+                    Desa Sejahtera adalah sebuah desa yang terletak di wilayah yang subur
+                    dengan mayoritas masyarakat bekerja di sektor pertanian. Desa ini memiliki
+                    potensi besar dalam pengembangan ekonomi masyarakat dan pariwisata desa.
+                </p>
+                <a href="{{ route('profile') }}" class="btn btn-light">Lihat Selengkapnya</a>
+            </div>
+
+            <div class="info-table">
+                <div><span>Nama Desa</span><strong>Desa Sejahtera</strong></div>
+                <div><span>Kecamatan</span><strong>Sukamaju</strong></div>
+                <div><span>Kabupaten</span><strong>Bogor</strong></div>
+                <div><span>Provinsi</span><strong>Jawa Barat</strong></div>
+                <div><span>Kode Pos</span><strong>16610</strong></div>
+            </div>
+        </div>
     </div>
-
-    <div class="bg-white p-5 rounded-xl shadow">
-        <h3 class="text-2xl font-bold">{{ number_format($data['keluarga']) }}</h3>
-        <p class="text-gray-500">Kepala Keluarga</p>
-    </div>
-
-    <div class="bg-white p-5 rounded-xl shadow">
-        <h3 class="text-2xl font-bold">{{ $data['berita'] }}</h3>
-        <p class="text-gray-500">Berita Bulan Ini</p>
-    </div>
-
-    <div class="bg-white p-5 rounded-xl shadow">
-        <h3 class="text-2xl font-bold">{{ $data['pengaduan'] }}%</h3>
-        <p class="text-gray-500">Pengaduan Selesai</p>
-    </div>
-
 </section>
 
-</body>
-</html>
+<section class="container section-space">
+    <div class="center-head">
+        <h2>Layanan Desa</h2>
+        <p>Berbagai layanan yang tersedia untuk memudahkan akses informasi dan pelayanan kepada masyarakat</p>
+    </div>
+
+    <div class="service-grid">
+        <div class="card service-card">
+            <div class="service-icon">👥</div>
+            <h3>Data Penduduk</h3>
+            <p>Lihat statistik dan informasi penduduk desa</p>
+        </div>
+
+        <div class="card service-card">
+            <div class="service-icon">📰</div>
+            <h3>Berita Desa</h3>
+            <p>Berita terkini seputar desa</p>
+        </div>
+
+        <div class="card service-card">
+            <div class="service-icon">💬</div>
+            <h3>Pengaduan</h3>
+            <p>Sampaikan pengaduan Anda</p>
+        </div>
+
+        <div class="card service-card">
+            <div class="service-icon">📘</div>
+            <h3>Tutorial Pengaduan</h3>
+            <p>Panduan cara menyampaikan pengaduan</p>
+        </div>
+
+        <div class="card service-card">
+            <div class="service-icon">📅</div>
+            <h3>Agenda Kegiatan</h3>
+            <p>Jadwal kegiatan desa mendatang</p>
+        </div>
+
+        <div class="card service-card">
+            <div class="service-icon">🖼️</div>
+            <h3>Galeri Kegiatan</h3>
+            <p>Dokumentasi kegiatan desa</p>
+        </div>
+    </div>
+</section>
+
+<section class="container section-space">
+    <div class="section-row">
+        <div>
+            <h2>Berita Terkini</h2>
+            <p>Update berita dan kegiatan desa</p>
+        </div>
+        <a href="{{ route('informasi') }}" class="btn btn-light">Lihat Semua</a>
+    </div>
+
+    <div class="news-grid">
+        <div class="card news-card">
+            <img src="{{ asset('img/berita1.jpg') }}" alt="Berita 1">
+            <div class="news-body">
+                <small>28 Mar 2026</small>
+                <h3>Pembangunan Jalan Desa Dimulai</h3>
+                <p>Proyek pembangunan jalan desa sepanjang 2 km telah dimulai dengan target selesai dalam 3 bulan.</p>
+                <a href="{{ route('informasi') }}">Baca Selengkapnya →</a>
+            </div>
+        </div>
+
+        <div class="card news-card">
+            <img src="{{ asset('img/berita2.jpg') }}" alt="Berita 2">
+            <div class="news-body">
+                <small>25 Mar 2026</small>
+                <h3>Musyawarah Desa Membahas Program 2026</h3>
+                <p>Seluruh warga desa berkumpul untuk membahas program-program prioritas tahun 2026.</p>
+                <a href="{{ route('informasi') }}">Baca Selengkapnya →</a>
+            </div>
+        </div>
+
+        <div class="card news-card">
+            <img src="{{ asset('img/berita3.jpg') }}" alt="Berita 3">
+            <div class="news-body">
+                <small>20 Mar 2026</small>
+                <h3>Perayaan Hari Kemerdekaan Desa</h3>
+                <p>Berbagai lomba dan kegiatan meriah diselenggarakan untuk memperingati hari kemerdekaan.</p>
+                <a href="{{ route('informasi') }}">Baca Selengkapnya →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tutorial-section">
+    <div class="container">
+        <div class="card tutorial-box">
+            <h2>Tutorial Cara Pengaduan</h2>
+            <p>Pelajari cara menyampaikan pengaduan, kritik, dan saran dengan mudah melalui portal desa kami.</p>
+
+            <ol class="steps">
+                <li>Klik menu "Layanan" atau "Pengaduan" di navigasi atas</li>
+                <li>Isi formulir pengaduan dengan lengkap dan jelas</li>
+                <li>Submit pengaduan dan dapatkan nomor tracking</li>
+                <li>Pantau status pengaduan Anda secara berkala</li>
+            </ol>
+
+            <a href="{{ route('layanan') }}" class="btn btn-primary">Buat Pengaduan Sekarang</a>
+        </div>
+    </div>
+</section>
+@endsection

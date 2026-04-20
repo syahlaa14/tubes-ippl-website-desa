@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/dashboard', [HomeController::class, 'index']);
+Route::view('/', 'home')->name('home');
+Route::view('/profile-desa', 'profile')->name('profile');
+Route::view('/informasi', 'informasi')->name('informasi');
+Route::view('/layanan', 'layanan')->name('layanan');
