@@ -10,8 +10,7 @@
                 kepada seluruh masyarakat desa.
             </p>
             <div class="hero-actions">
-                <a href="{{ route('layanan') }}" class="btn btn-primary">Layanan Kami</a>
-                <a href="{{ route('profile') }}" class="btn btn-light">Profil Desa</a>
+                <a href="{{ route('struktur.organisasi') }}" class="btn btn-primary px-4 py-2 rounded-pill shadow">Lihat Struktural Organisasi Desa</a>
             </div>
         </div>
 
