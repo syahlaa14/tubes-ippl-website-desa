@@ -10,7 +10,7 @@
 
 <section class="container section-space">
     <div class="tabs">
-        <button class="tab active">Berita Desa</button>
+        <a href="{{ route('berita.index') }}" class="tab active">Berita Desa</a>
         <button class="tab">Agenda Kegiatan</button>
         <button class="tab">Galeri</button>
     </div>

@@ -191,6 +191,19 @@ img {
     border-radius: 22px;
     padding: 28px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+    /* tambahan hover */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card:active {
+    transform: translateY(-4px) scale(0.98);
 }
 
 .stat-card h3 {
@@ -200,6 +213,24 @@ img {
 
 .stat-card p {
     color: #8b93a7;
+}
+
+.stat-card:hover {
+    background: linear-gradient(135deg, #ffffff, #f5f7ff);
+}
+
+.stat-card:hover h3 {
+    color: #6777f6;
+}
+
+.stat-icon,
+.service-icon {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .stat-icon,
+.card:hover .service-icon {
+    transform: scale(1.2);
 }
 
 .stat-top {
@@ -289,6 +320,11 @@ img {
 .service-card,
 .service-detail {
     min-height: 180px;
+}
+
+.service-card {
+    display: block;
+    color: inherit;
 }
 
 .service-icon {
@@ -651,4 +687,17 @@ img {
     .feature-list.two-col {
         grid-template-columns: 1fr;
     }
+
+    .tab {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #eee;
+    text-decoration: none;
+    color: black;
+}
+
+.tab.active {
+    background: #4f46e5;
+    color: white;
+}
 }

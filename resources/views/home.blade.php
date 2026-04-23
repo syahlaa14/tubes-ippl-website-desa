@@ -96,42 +96,44 @@
     </div>
 
     <div class="service-grid">
-        <div class="card service-card">
-            <div class="service-icon">👥</div>
-            <h3>Data Penduduk</h3>
-            <p>Lihat statistik dan informasi penduduk desa</p>
-        </div>
 
-        <div class="card service-card">
-            <div class="service-icon">📰</div>
-            <h3>Berita Desa</h3>
-            <p>Berita terkini seputar desa</p>
-        </div>
+    <a href="{{ route('data.penduduk') }}" class="card service-card">
+        <div class="service-icon">👥</div>
+        <h3>Data Penduduk</h3>
+        <p>Lihat statistik dan informasi penduduk desa</p>
+    </a>
 
-        <div class="card service-card">
-            <div class="service-icon">💬</div>
-            <h3>Pengaduan</h3>
-            <p>Sampaikan pengaduan Anda</p>
-        </div>
+    <a href="{{ route('berita.index') }}" class="card service-card">
+        <div class="service-icon">📰</div>
+        <h3>Berita Desa</h3>
+        <p>Berita terkini seputar desa</p>
+    </a>
 
-        <div class="card service-card">
-            <div class="service-icon">📘</div>
-            <h3>Tutorial Pengaduan</h3>
-            <p>Panduan cara menyampaikan pengaduan</p>
-        </div>
+    <a href="{{ route('pengaduan') }}" class="card service-card">
+        <div class="service-icon">💬</div>
+        <h3>Pengaduan</h3>
+        <p>Sampaikan pengaduan Anda</p>
+    </a>
 
-        <div class="card service-card">
-            <div class="service-icon">📅</div>
-            <h3>Agenda Kegiatan</h3>
-            <p>Jadwal kegiatan desa mendatang</p>
-        </div>
+    <a href="{{ route('tutorial.pengaduan') }}" class="card service-card">
+        <div class="service-icon">📘</div>
+        <h3>Tutorial Pengaduan</h3>
+        <p>Panduan cara menyampaikan pengaduan</p>
+    </a>
 
-        <div class="card service-card">
-            <div class="service-icon">🖼️</div>
-            <h3>Galeri Kegiatan</h3>
-            <p>Dokumentasi kegiatan desa</p>
-        </div>
-    </div>
+    <a href="{{ route('agenda') }}" class="card service-card">
+        <div class="service-icon">📅</div>
+        <h3>Agenda Kegiatan</h3>
+        <p>Jadwal kegiatan desa mendatang</p>
+    </a>
+
+    <a href="{{ route('galeri') }}" class="card service-card">
+        <div class="service-icon">🖼️</div>
+        <h3>Galeri Kegiatan</h3>
+        <p>Dokumentasi kegiatan desa</p>
+    </a>
+
+</div>
 </section>
 
 <section class="container section-space">
