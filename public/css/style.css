@@ -701,3 +701,70 @@ img {
     color: white;
 }
 }
+
+    body {
+        background: #f5f6fa;
+    }
+
+    .form-container {
+        max-width: 1250px;
+        margin: 60px auto;
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+    .form-title {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .form-label {
+        font-weight: 500;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 30px;
+        border: 1px solid #e0e0e0;
+        background: #f9fafc;
+        outline: none;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: #6c63ff;
+        background: #fff;
+    }
+
+    .form-textarea {
+        border-radius: 15px;
+        min-height: 120px;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-group {
+        flex: 1;
+        margin-bottom: 20px;
+    }
+
+    .btn-submit {
+        background: #e6e8ff;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        float: right;
+        font-weight: 500;
+        transition: 0.2s;
+    }
+
+    .btn-submit:hover {
+        background: #d2d5ff;
+    }
